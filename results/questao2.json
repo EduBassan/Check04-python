@@ -1,0 +1,311 @@
+{
+  "seed": 4,
+  "registros_brutos": 20000,
+  "horas_agregadas": 5000,
+  "regioes": ["Nordeste", "Norte", "Sudeste", "Sul"],
+  "periodo": {
+    "inicio": "2026-01-01T00:00",
+    "fim": "2026-07-28T07:00"
+  },
+  "formula": "soma_regioes((consumo - capacidade_disponivel) * prioridade * custo_centavos)",
+  "horas_positivas": 522,
+  "horas_negativas": 4478,
+  "horas_neutras": 0,
+  "forca_bruta": {
+    "inicio": 3200,
+    "fim": 3499,
+    "soma": 38328640,
+    "operacoes": 12502500
+  },
+  "dividir_conquistar": {
+    "inicio": 3200,
+    "fim": 3499,
+    "soma": 38328640,
+    "operacoes": 61808
+  },
+  "intervalo": {
+    "inicio": "2026-05-14T08:00",
+    "fim": "2026-05-26T19:00",
+    "duracao_horas": 300
+  },
+  "consultas": {
+    "consumo_acumulado_por_regiao_kwh": {
+      "Nordeste": 5204035,
+      "Norte": 4201771,
+      "Sudeste": 7702921,
+      "Sul": 4705379
+    },
+    "consumo_primeiro_horario_kwh": 3771,
+    "registros_primeiro_horario": [
+      {
+        "timestamp": "2026-01-01T00:00",
+        "regiao": "Norte",
+        "consumo": 690,
+        "capacidade_disponivel": 900,
+        "prioridade": 3,
+        "custo": 65
+      },
+      {
+        "timestamp": "2026-01-01T00:00",
+        "regiao": "Nordeste",
+        "consumo": 898,
+        "capacidade_disponivel": 1100,
+        "prioridade": 5,
+        "custo": 90
+      },
+      {
+        "timestamp": "2026-01-01T00:00",
+        "regiao": "Sudeste",
+        "consumo": 1373,
+        "capacidade_disponivel": 1600,
+        "prioridade": 4,
+        "custo": 75
+      },
+      {
+        "timestamp": "2026-01-01T00:00",
+        "regiao": "Sul",
+        "consumo": 810,
+        "capacidade_disponivel": 1000,
+        "prioridade": 2,
+        "custo": 55
+      }
+    ],
+    "cinco_maiores_picos": [
+      {
+        "timestamp": "2026-05-16T14:00",
+        "consumo": 5724
+      },
+      {
+        "timestamp": "2026-05-19T13:00",
+        "consumo": 5723
+      },
+      {
+        "timestamp": "2026-05-19T12:00",
+        "consumo": 5722
+      },
+      {
+        "timestamp": "2026-05-26T14:00",
+        "consumo": 5716
+      },
+      {
+        "timestamp": "2026-05-21T14:00",
+        "consumo": 5715
+      }
+    ],
+    "tres_primeiras_horas_intervalo_critico": [
+      ["2026-05-14T08:00", 149470],
+      ["2026-05-14T09:00", 166260],
+      ["2026-05-14T10:00", 171210]
+    ]
+  },
+  "escalabilidade": [
+    {
+      "n_horas": 100,
+      "registros_brutos": 400,
+      "algoritmo": "Força bruta",
+      "repeticoes": 3,
+      "tempo_medio_s": 0.00015264199979962237,
+      "desvio_padrao_s": 9.068132080702897e-6,
+      "operacoes": 5050,
+      "pico_memoria_bytes": 472,
+      "inicio": 15,
+      "fim": 15,
+      "soma": 8665,
+      "tempos_s": [
+        0.00014928000018699095, 0.00016291099927912, 0.00014573499993275618
+      ]
+    },
+    {
+      "n_horas": 100,
+      "registros_brutos": 400,
+      "algoritmo": "Dividir e conquistar",
+      "repeticoes": 3,
+      "tempo_medio_s": 7.045066680196517e-5,
+      "desvio_padrao_s": 6.873968196589034e-7,
+      "operacoes": 672,
+      "pico_memoria_bytes": 824,
+      "inicio": 15,
+      "fim": 15,
+      "soma": 8665,
+      "tempos_s": [
+        7.123500017769402e-5, 7.016400013526436e-5, 6.995300009293715e-5
+      ]
+    },
+    {
+      "n_horas": 250,
+      "registros_brutos": 1000,
+      "algoritmo": "Força bruta",
+      "repeticoes": 3,
+      "tempo_medio_s": 0.0009948416667005706,
+      "desvio_padrao_s": 0.00018924647320912383,
+      "operacoes": 31375,
+      "pico_memoria_bytes": 472,
+      "inicio": 15,
+      "fim": 15,
+      "soma": 8665,
+      "tempos_s": [
+        0.0008844849999150028, 0.000886679000359436, 0.0012133609998272732
+      ]
+    },
+    {
+      "n_horas": 250,
+      "registros_brutos": 1000,
+      "algoritmo": "Dividir e conquistar",
+      "repeticoes": 3,
+      "tempo_medio_s": 0.0001901273332502266,
+      "desvio_padrao_s": 7.128716747479178e-6,
+      "operacoes": 1994,
+      "pico_memoria_bytes": 920,
+      "inicio": 15,
+      "fim": 15,
+      "soma": 8665,
+      "tempos_s": [
+        0.00018678600008570356, 0.00018528300006437348, 0.00019831299960060278
+      ]
+    },
+    {
+      "n_horas": 500,
+      "registros_brutos": 2000,
+      "algoritmo": "Força bruta",
+      "repeticoes": 3,
+      "tempo_medio_s": 0.004805837333454595,
+      "desvio_padrao_s": 0.0005024579089371666,
+      "operacoes": 125250,
+      "pico_memoria_bytes": 472,
+      "inicio": 15,
+      "fim": 15,
+      "soma": 8665,
+      "tempos_s": [
+        0.005170643000383279, 0.0042327279998062295, 0.005014141000174277
+      ]
+    },
+    {
+      "n_horas": 500,
+      "registros_brutos": 2000,
+      "algoritmo": "Dividir e conquistar",
+      "repeticoes": 3,
+      "tempo_medio_s": 0.0004243930000787562,
+      "desvio_padrao_s": 9.045573107230446e-6,
+      "operacoes": 4488,
+      "pico_memoria_bytes": 1872,
+      "inicio": 15,
+      "fim": 15,
+      "soma": 8665,
+      "tempos_s": [
+        0.0004231140001138556, 0.00043401000039011706, 0.000416054999732296
+      ]
+    },
+    {
+      "n_horas": 1000,
+      "registros_brutos": 4000,
+      "algoritmo": "Força bruta",
+      "repeticoes": 3,
+      "tempo_medio_s": 0.01903984366678439,
+      "desvio_padrao_s": 0.0017400543769547402,
+      "operacoes": 500500,
+      "pico_memoria_bytes": 472,
+      "inicio": 15,
+      "fim": 15,
+      "soma": 8665,
+      "tempos_s": [
+        0.017933600999640475, 0.02104553500066686, 0.018140395000045828
+      ]
+    },
+    {
+      "n_horas": 1000,
+      "registros_brutos": 4000,
+      "algoritmo": "Dividir e conquistar",
+      "repeticoes": 3,
+      "tempo_medio_s": 0.0009988369999215745,
+      "desvio_padrao_s": 1.3845803446443538e-5,
+      "operacoes": 9976,
+      "pico_memoria_bytes": 2192,
+      "inicio": 15,
+      "fim": 15,
+      "soma": 8665,
+      "tempos_s": [
+        0.0010147869998036185, 0.000991812999927788, 0.0009899110000333167
+      ]
+    },
+    {
+      "n_horas": 2000,
+      "registros_brutos": 8000,
+      "algoritmo": "Força bruta",
+      "repeticoes": 3,
+      "tempo_medio_s": 0.07154605099973803,
+      "desvio_padrao_s": 0.0009867765547452217,
+      "operacoes": 2001000,
+      "pico_memoria_bytes": 492,
+      "inicio": 1000,
+      "fim": 1245,
+      "soma": 12733555,
+      "tempos_s": [0.07202629899984458, 0.07220077299916738, 0.0704110810002021]
+    },
+    {
+      "n_horas": 2000,
+      "registros_brutos": 8000,
+      "algoritmo": "Dividir e conquistar",
+      "repeticoes": 3,
+      "tempo_medio_s": 0.0020113359999716827,
+      "desvio_padrao_s": 8.523645599312487e-6,
+      "operacoes": 21952,
+      "pico_memoria_bytes": 2448,
+      "inicio": 1000,
+      "fim": 1245,
+      "soma": 12733555,
+      "tempos_s": [
+        0.002010066999901028, 0.0020204230004310375, 0.002003517999582982
+      ]
+    },
+    {
+      "n_horas": 5000,
+      "registros_brutos": 20000,
+      "algoritmo": "Força bruta",
+      "repeticoes": 3,
+      "tempo_medio_s": 0.45458992333321174,
+      "desvio_padrao_s": 0.006684992550066965,
+      "operacoes": 12502500,
+      "pico_memoria_bytes": 492,
+      "inicio": 3200,
+      "fim": 3499,
+      "soma": 38328640,
+      "tempos_s": [0.4468723069994667, 0.4583148510000683, 0.4585826120001002]
+    },
+    {
+      "n_horas": 5000,
+      "registros_brutos": 20000,
+      "algoritmo": "Dividir e conquistar",
+      "repeticoes": 3,
+      "tempo_medio_s": 0.006489608666925051,
+      "desvio_padrao_s": 0.0010788017716809562,
+      "operacoes": 61808,
+      "pico_memoria_bytes": 2960,
+      "inicio": 3200,
+      "fim": 3499,
+      "soma": 38328640,
+      "tempos_s": [
+        0.0057961359998444095, 0.007732523000413494, 0.005940167000517249
+      ]
+    }
+  ],
+  "ambiente": {
+    "python": "3.12.14",
+    "sistema": "Linux",
+    "arquitetura": "x86_64",
+    "timer": "time.perf_counter",
+    "memoria": "pico adicional Python (bytes), tracemalloc; entrada excluída"
+  },
+  "projecao_registros": {
+    "observacao": "Contagens teóricas, não execuções de um milhão de registros; quatro regiões fixas.",
+    "1000_registros": {
+      "n_horas": 250,
+      "somas_bf": 31375,
+      "somas_dc": 1994
+    },
+    "1000000_registros": {
+      "n_horas": 250000,
+      "somas_bf": 31250125000,
+      "somas_dc": 4487856
+    }
+  }
+}
