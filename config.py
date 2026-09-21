@@ -1,0 +1,2 @@
+SEED = 4
+REPETICOES = 3
