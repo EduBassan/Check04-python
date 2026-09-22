@@ -11,6 +11,7 @@
 | ------------- | -------- |
 | Eduardo       | RM561474 |
 | João Abe      | RM561446 |
+| Kaike Souza   | RM561623 |
 
 **Número do grupo: 4.** A seed utilizada é **4**, definida em `config.py`, igual ao número do grupo.
 
